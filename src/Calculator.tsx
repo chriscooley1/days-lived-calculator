@@ -6,7 +6,14 @@ const Calculator: React.FC = () => {
     const [age, setAge] = useState<number | string>("");
     const [daysLived, setDaysLived] = useState<number | null>(null);
 
-    // Handler for changes in the age input field
+    /**
+     * Handler for changes in the age input field.
+     *
+     * @remarks
+     * This function updates the `age` state with the value from the input field.
+     *
+     * @param event - The change event from the age input field.
+     */
     const handleAgeChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         // Update age state with the value from the input field
         setAge(event.target.valueAsNumber);
@@ -18,7 +25,13 @@ const Calculator: React.FC = () => {
         }
     };
 
-    // Function to calculate days lived based on age
+    /**
+     * Function to calculate days lived based on age.
+     *
+     * @remarks
+     * This function calculates the number of days lived based on the `age` state.
+     * If `age` is invalid, it sets the `daysLived` state to `null`.
+     */
     const calculateAge = (): void => {
         // Check if age is a valid number
         if (typeof age === "number" && !isNaN(age)) {
